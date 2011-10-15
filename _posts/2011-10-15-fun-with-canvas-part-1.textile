@@ -1,0 +1,26 @@
+---
+layout: post
+title: Fun with canvas part 1
+category: code
+---
+
+<script type="text/javascript" src="/js/animation-part-1.js"></script>
+<script type="text/javascript">
+$(function() {
+  Animation.init("stars1");  
+});
+</script>
+
+h1. {{ page.title }}
+
+p(meta). 15 Oct 2011 - Espoo
+
+I had this *crazy* idea of putting some canvas animation into the layout of this new site. The idea didn't fly, but I managed to create this *quite nice* animation of stars:
+
+<canvas id="stars1" width="660" height="300" style="border: 3px solid #999;">
+</canvas>
+
+Here's the code:
+
+<script src="https://gist.github.com/1290219.js?file=animation-part-1.js"></script>
+ 
