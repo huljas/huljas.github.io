@@ -11,7 +11,7 @@ $(function() {
 });
 </script>
 
-h1. {{ page.title }}
+h2. {{ page.title }}
 
 p(meta). 15 Oct 2011 - Espoo
 

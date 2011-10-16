@@ -4,10 +4,12 @@ title: Blogging in github is like writing code
 category: misc
 ---
 
-h1. {{ page.title }}
+h2. {{ page.title }}
 
 p(meta). 15 Oct 2011 - Espoo
 
 My "old blog":http://pragmatastic.blogspot.com with it's text area bound interface felt really disconnected from the code related topics I wanted to write about. But this git thing feels already much more natural, it feels like writing code. Or perhaps it's because I'm doing this in vi. ;)
+
+
 
 

@@ -1,0 +1,89 @@
+---
+layout: post
+title: Managing database with play carbonate
+category: code
+---
+
+h2. {{ page.title }}
+
+p(meta). 4 Apr 2011 - Espoo
+
+Managing the database is important aspect of modern application development, typically done with database migrations. I used migrations before I started working with play so naturally the first module I wrote for it was a database migrations module with my favorite migrations library, "Carbon Five Migrations":http://code.google.com/p/c5-db-migration/. 
+
+The initial version of the module was really basic and after a twenty or so models created and equal amount of copy-pasted create table statements I got this "idea":http://pragmatastic.blogspot.com/2011/02/migrations-to-play-why-not-use.html of updating my module with the Hibernate schema update. And the result is the "play-carbonate":https://github.com/huljas/play-carbonate module. 
+
+p(warn). Remember that the schema update is just a tool. Always check the SQL it generates!
+
+h3. Setting up
+
+To add this module as dependency of your application, add it to the *dependencies.yml* file:
+
+bc. require:
+    - play -> carbonate {version}
+
+Next configure the database and add the carbonate path in to the *application.conf* file, I am using play id *local-mysql* and database *play-test*: 
+
+{% highlight properties %}
+%local-mysql.db=
+%local-mysql.db.url=jdbc:mysql://localhost:3306/play-test
+%local-mysql.db.driver=com.mysql.jdbc.Driver
+%local-mysql.db.user=root
+%local-mysql.db.pass=
+%local-mysql.jpa.ddl=none
+%local-mysql.carbonate.path=conf/migrations
+{% endhighlight %}
+
+Now our carbonate module is configured and ready to use.
+
+h3. Usage example
+
+Now lets consider a simple model shown below 
+
+<script src="https://gist.github.com/902204.js?file=SimpleEntity.java"></script>  
+
+We run the the following play command with our play id *local-mysql* to generate a new migration file under the *conf/migrations* folder:
+
+{% highlight ini %}
+play carbonate:new --%local-mysql
+{% endhighlight %}
+
+Now we can check the generated file
+
+<script src="https://gist.github.com/902204.js?file=20110404220338_simple_model.sql"></script>
+
+To run the migration we just start our play application:
+ 
+{% highlight bash %}
+play run --%local-mysql
+22:08:20,709 INFO  ~ Running migrations from path conf/migrations
+22:08:20,757 INFO  ~ Migrating database... applying 1 migration.
+22:08:20,758 INFO  ~ Running migration 20110404220338_simple_model.sql.
+22:08:20,812 INFO  ~ Migrated database in 0:00:00.250.
+{% endhighlight %}
+
+Now we want to change our model and add a *SimpleCategory* to our model: 
+
+<script src="https://gist.github.com/902204.js?file=SimpleEntityWithCategory.java"></script>  
+
+So after the change we run the command again 
+
+{% highlight bash %}
+play carbonate:new --%local-mysql
+{% endhighlight %}
+
+ending up with a migration looking like this:
+  
+<script src="https://gist.github.com/902204.js?file=20110404221245_added_category_for_the_entity.sql"></script>
+
+p(info). Note that errors in migrations are easier to manage if you split every SQL statement to its own migration file. 
+
+To apply the migration we just run our application again:
+
+{% highlight bash %}
+play run --%local-mysql
+22:19:28,016 INFO  ~ Running migrations from path conf/migrations
+22:19:28,058 INFO  ~ Migrating database... applying 1 migration.
+22:19:28,059 INFO  ~ Running migration 20110404221245_added_category_for_the_entity.sql.
+22:19:28,439 INFO  ~ Migrated database in 0:00:00.380.
+{% endhighlight %}
+ 

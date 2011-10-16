@@ -3,8 +3,36 @@ layout: default
 title: Heikki Uljas
 ---
 
+<script type="text/javascript">
+$(function() {
+  $(".categories a").click(function() {
+    $(".categories a.selected").removeClass("selected");
+    $(this).addClass("selected");
+    if ($(this).hasClass("show-all")) {
+      $(".posts a").parent().show();
+    } else {
+      var category = $(this).find("span").html();
+      $(".posts a").each(function() {
+	if ($(this).attr("href").indexOf("/" + category + "/") < 0) {
+	  $(this).parent().hide();
+	} else {
+	  $(this).parent().show();
+	}      
+      });
+    }
+    return false;
+  });
+});
+</script>
+
 <div id="home">
-  <h1>Blog Posts</h1>
+  <div class="categories">
+    <h1>Hi, this is my blog!</h1>
+    <a href="#" class="show-all selected"><span>all</span></a>
+    {% for category in site.categories %}
+      <a href="#"><span>{{ category | first }}</span></a>
+    {% endfor %}
+  </div>
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
