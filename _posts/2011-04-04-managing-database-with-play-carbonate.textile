@@ -23,15 +23,13 @@ bc. require:
 
 Next configure the database and add the carbonate path in to the *application.conf* file, I am using play id *local-mysql* and database *play-test*: 
 
-{% highlight properties %}
-%local-mysql.db=
+bc. %local-mysql.db=
 %local-mysql.db.url=jdbc:mysql://localhost:3306/play-test
 %local-mysql.db.driver=com.mysql.jdbc.Driver
 %local-mysql.db.user=root
 %local-mysql.db.pass=
 %local-mysql.jpa.ddl=none
 %local-mysql.carbonate.path=conf/migrations
-{% endhighlight %}
 
 Now our carbonate module is configured and ready to use.
 
@@ -43,9 +41,7 @@ Now lets consider a simple model shown below
 
 We run the the following play command with our play id *local-mysql* to generate a new migration file under the *conf/migrations* folder:
 
-{% highlight ini %}
-play carbonate:new --%local-mysql
-{% endhighlight %}
+bc. play carbonate:new --%local-mysql
 
 Now we can check the generated file
 
@@ -53,13 +49,11 @@ Now we can check the generated file
 
 To run the migration we just start our play application:
  
-{% highlight bash %}
-play run --%local-mysql
+bc. play run --%local-mysql
 22:08:20,709 INFO  ~ Running migrations from path conf/migrations
 22:08:20,757 INFO  ~ Migrating database... applying 1 migration.
 22:08:20,758 INFO  ~ Running migration 20110404220338_simple_model.sql.
 22:08:20,812 INFO  ~ Migrated database in 0:00:00.250.
-{% endhighlight %}
 
 Now we want to change our model and add a *SimpleCategory* to our model: 
 
@@ -67,9 +61,7 @@ Now we want to change our model and add a *SimpleCategory* to our model:
 
 So after the change we run the command again 
 
-{% highlight bash %}
-play carbonate:new --%local-mysql
-{% endhighlight %}
+bc. play carbonate:new --%local-mysql
 
 ending up with a migration looking like this:
   
@@ -79,11 +71,9 @@ p(info). Note that errors in migrations are easier to manage if you split every 
 
 To apply the migration we just run our application again:
 
-{% highlight bash %}
-play run --%local-mysql
+bc. play run --%local-mysql
 22:19:28,016 INFO  ~ Running migrations from path conf/migrations
 22:19:28,058 INFO  ~ Migrating database... applying 1 migration.
 22:19:28,059 INFO  ~ Running migration 20110404221245_added_category_for_the_entity.sql.
 22:19:28,439 INFO  ~ Migrated database in 0:00:00.380.
-{% endhighlight %}
  
