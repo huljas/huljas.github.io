@@ -163,16 +163,6 @@ ul.posts {
   margin-bottom: 2em;
 }
 
-.sidebar {
-  position: absolute;
-  top: 30px;
-  left: 700px;
-  padding: 5px;
-  background-color: #fff;
-  opacity: 0.8;
-  width: 250px;
-}
-
 .site .title a {
   color: #a00;
   text-decoration: none;
