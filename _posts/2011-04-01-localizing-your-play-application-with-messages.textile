@@ -1,0 +1,63 @@
+---
+layout: post
+title: Localizing your play application with @messages
+category: code
+---
+
+
+h2. {{ page.title }}
+
+p(meta). 20 Mar 2011 - Espoo
+
+I wrote this module to help me with the localization of our application. I used to have similar tool in our old struts based system, so I first copied it to play and later rewrote it all together. I even forced myself to learn regexp, which I have been trying to avoid so far ;). 
+
+h3. Setting up
+
+To add this module as dependency of your application, add it to the *dependencies.yml* file:
+
+bc. require:
+    - play -> carbonate {version}
+
+Then you need to add the module routes to your application *conf/routes* file:
+
+bc.    *    /    module:messages
+
+Now once you restart your application you can access the tool at "http://localhost:9000/@messages":http://localhost:9000/@messages
+
+h3. Example 1: Managing existing keys
+
+<a class="thumb" href="http://1.bp.blogspot.com/-Vcs8tke5GeA/TW6PG7vpYUI/AAAAAAAAAOk/TxEWTTJIxQk/s1600/messages_existing.png" rel="nofollow" imageanchor="1" style="clear:right; float:right; margin-left:1em; margin-bottom:1em">  <img border="0" height="173" width="400" src="http://1.bp.blogspot.com/-Vcs8tke5GeA/TW6PG7vpYUI/AAAAAAAAAOk/TxEWTTJIxQk/s400/messages_existing.png" /></a>
+
+This is the tab where you can modify the *existing keys*, _keys that are found in sources and messages._ Header section has selection for the language to edit and another for the language to compare to. Keys can be removed by checking the remove check box.  
+
+The keep check box is reserved for valid keys that the tool doesn't find in the sources, for example keys that are generated in code. 
+
+h3. Example 2: Localizing new keys
+
+<a class="thumb" href="http://2.bp.blogspot.com/-hDqZ2gsKkX8/TW6WFopL2gI/AAAAAAAAAOs/_LqV0sIAZo4/s1600/messages_new.png" imageanchor="1" style="clear:right; float:right; margin-left:1em; margin-bottom:1em"><img border="0" height="161" width="400" src="http://2.bp.blogspot.com/-hDqZ2gsKkX8/TW6WFopL2gI/AAAAAAAAAOs/_LqV0sIAZo4/s400/messages_new.png" /></a>
+
+*New keys* are _those keys that are found in the sources but are not yet localized in the messages file for the selected language_. 
+
+<a class="thumb" href="http://2.bp.blogspot.com/-nSbjbL6G8ZI/TW6aUhrXqbI/AAAAAAAAAO0/jWwXo_j0cmo/s1600/messages_new_2.png" imageanchor="1" style="clear:right; float:right; margin-left:1em; margin-bottom:1em"><img border="0" height="165" width="400" src="http://2.bp.blogspot.com/-nSbjbL6G8ZI/TW6aUhrXqbI/AAAAAAAAAO0/jWwXo_j0cmo/s400/messages_new_2.png" /></a>
+
+Since we are not sure about the first key we *click on the key to check the sources*. From the sources we can see that this key is in fact part of a generated key. We choose to ignore this key, meaning that it will no longer be shown in the new keys list in any language. 
+
+<a class="thumb" href="http://2.bp.blogspot.com/-OsLxPPeS-6w/TW6a2Q-MLNI/AAAAAAAAAO8/lc13zdQmu2w/s1600/messages_new_3.png" imageanchor="1" style="clear:right; float:right; margin-left:1em; margin-bottom:1em"><img border="0" height="165" width="400" src="http://2.bp.blogspot.com/-OsLxPPeS-6w/TW6a2Q-MLNI/AAAAAAAAAO8/lc13zdQmu2w/s400/messages_new_3.png" /></a>
+
+After save we can find the key in the ignored keys section. Ignored keys are saved in the *messages.ignore* file. 
+
+<div style="clear:both"></div>
+
+h3. Example 3: Separating generated keys from obsolete keys
+
+<a class="thumb" href="http://1.bp.blogspot.com/-G0jNKpDXhGI/TW6b26OB25I/AAAAAAAAAPE/S6hyXWudnDM/s1600/messages_obsolete.png" imageanchor="1" style="clear:right; float:right; margin-left:1em; margin-bottom:1em"><img border="0" height="155" width="400" src="http://1.bp.blogspot.com/-G0jNKpDXhGI/TW6b26OB25I/AAAAAAAAAPE/S6hyXWudnDM/s400/messages_obsolete.png" /></a>
+
+*Obsolete keys* are those _keys that are in the messages file, but cannot be found in the sources_.
+
+We mark keys that are valid with the *keep* check box. These keys will be added to the keep list and will be displayed among the existing keys. The keep list is saved in *messages.keep* file.
+
+Keys that are old can be removed by checking the *remove* check box. 
+
+h3. References
+
+You can find the sources at github here  <a href="https://github.com/huljas/play-messages">https://github.com/huljas/play-messages</a>.
