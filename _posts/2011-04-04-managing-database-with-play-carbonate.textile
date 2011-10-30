@@ -42,6 +42,11 @@ Now lets consider a simple model shown below
 We run the the following play command with our play id *local-mysql* to generate a new migration file under the *conf/migrations* folder:
 
 bc. play carbonate:new --%local-mysql
+Please give description for you migration:
+simple model
+21:00:18,136 WARN  ~ Changes from schema update:
+create table SimpleEntity (id bigint not null auto_increment, age integer not null, isEternal bit not null, name varchar(255), primary key (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+21:00:18,138 WARN  ~ New migration file created ~/code/test-app/conf/migrations/20110404220338_simple_model.sql
 
 Now we can check the generated file
 
