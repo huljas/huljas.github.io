@@ -43,8 +43,8 @@ h2 {
 
 h3 {
   font-size: 120%
-  font-weight: bold;
-  font-family: arial;
+  font-weight: normal;
+  font-family: 'Oswald', arial;
   margin: 0.3em 0 0;
 }
 
@@ -176,6 +176,10 @@ ul.posts {
 .site .title a.extra {
   text-decoration: none;
   margin-right: 2em;
+}
+
+.site .title a.selected {
+  text-decoration: underline;
 }
 
 .site .title a.extra:hover {

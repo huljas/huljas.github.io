@@ -39,6 +39,19 @@ $(function() {
   ForkMeSun.init("forkMe");
 });
   </script>
+  <script>
+  $(function() {
+    if (window.location.pathname == "/") {
+      $(".site .title  a:eq(0)").addClass("selected");
+    }
+    else if (window.location.pathname == "/about.html") {
+      $(".site .title a:eq(1)").addClass("selected");
+    }
+    else if (window.location.pathname == "/projects.html") {
+      $(".site .title a:eq(2)").addClass("selected");
+    }
+  });
+  </script>
 </head>
 <body>
 
