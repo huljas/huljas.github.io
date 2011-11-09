@@ -1,0 +1,26 @@
+---
+layout: post
+title: Drive by performance testing
+category: swengi
+---
+
+h2. {{ page.title }}
+
+p(meta). 08 Nov 2011 - Espoo
+
+Typically the performance tests are run by a specialist who runs his tests for a day, sends his report and then drives away. And you, the poor developer are left with a plot chart illustrating some weird performance issue you haven't the slightest idea what is causing it.
+
+Now it doesn't have to be like that. Just be prepared!
+
+h3. Use performance monitoring in your code
+
+Add measurement into the important parts of your code and enable seeing the reports in runtime. I have used "Jamon":http://jamonapi.sourceforge.net/ in Java development with great success. 
+
+h3. Run your own performance tests
+
+By running your own tests you can fix all the silly mistakes before the official tests are run. Focus on covering the critical parts of your application.
+ 
+h3. Participate in the official performance testing
+
+If you have proper monitoring in place you should be able to analyze and fix the issues as they are found. It is also the only way to analyze the *really weird* ones.
+
