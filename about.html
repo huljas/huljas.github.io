@@ -14,6 +14,25 @@ title: About Me
   <br>
   <h2>But I really see it as</h2>
   <h1>Working with the cool stuff between the routine.</h1>
-  <h2>And of course there are other things I enjoy...</h2>
+  <br>
+  <h2>And ofc things that are important to me</h2>
   
+ <div class="interests">
+ </div>
+		<div style="clear:both"></div>
+<script>
+$(function() {
+	$.get("/photos.xml", function(result) {
+		$(result).find("item").each(function() {
+			var elem = $("<div class=\"wrapper\"></div>");
+			var a = $("<a>").attr("href", $(this).find("link").first().text());
+			a.append("<img src=\"" + $(this).find("enclosure").attr("url") + "\">");
+			a.append($("<span>").append($(this).find("title").first().text()));
+			elem.append(a);
+			$(".interests").append(elem);
+		});
+	}, "xml");
+});
+</script> 
+ 
 </div> 
