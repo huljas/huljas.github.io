@@ -1,0 +1,46 @@
+---
+layout: post
+title: Facebook cookie server side authentication 
+category: code
+---
+
+h2. {{ page.title }}
+
+p(meta). 15 Nov 2011 - Espoo
+
+In this example I show how to validate a user's facebook session in the server side using the fbsr cookie created by the FB javascript API.
+
+I use the following, "basic":http://developers.facebook.com/docs/reference/javascript/ html to initialize the login button.
+
+<script src="https://gist.github.com/1367782.js?file=index.html"></script>
+
+The facebook login will in this case create a cookie named <code>fbsr_[your facebook application id]</code> which is in the form of "signed request":http://developers.facebook.com/docs/authentication/signed_request/ consisting of two parts:
+
+bc. [mac sha256 signature].[base64 url encoded json]
+
+Now I can validate the cookie on server side by signing the *second part* of the cookie with my *facebook secret* and making sure that it matches to the *first part*. To get the json data I just have to json decode the second part of the cookie. 
+
+Here's code that I use to do it in Java: 
+
+<script src="https://gist.github.com/1367782.js?file=FacebookCookie.java"></script>
+
+So now we have json object in the format of:
+
+bc. { 
+  "algorithm" : "HMAC-SHA256",
+  "code" : "2.AQDC1d-ZE90999-6.3600.1321387200.1-676786217|X1VAtqRDS_3NR6lduKISj50Uozw", 
+  "issued_at" : 1321381928, 
+  "user_id" : "12345678"
+}
+
+In order to get the access token, we need to request from the graph api using the following request:
+
+bc. https://graph.facebook.com/oauth/access_token?
+client_id=[facebook application id]
+&redirect_uri=
+&client_secret=[application secret]
+&code=[code from the json]
+
+Note that you need to include  *an empty redirect_uri* parameter in the request for it to work. From the response you get the actual access token, which you can use to get more information about the user. 
+
+You can find a simple example application "here":https://github.com/huljas/fb-cookie-example. 
