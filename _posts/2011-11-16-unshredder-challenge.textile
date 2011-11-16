@@ -1,0 +1,51 @@
+---
+layout: post
+title: Unshredder challenge
+category: code
+---
+
+h2. {{ page.title }}
+
+p(meta). 16 Nov 2011 - Espoo
+
+I got challenged to the "unshredder":http://instagram-engineering.tumblr.com/post/12651721845/instagram-engineering-challenge-the-unshredder challenge. I decided to try something different this time and try to solve the problem with *python*.
+
+h3. Setting up
+
+So my first task was to setup python and the "PIL":http://www.pythonware.com/products/pil/ image library on my windows machine. I had python installed but the PIL installer couldn't find it, so I had reinstall python. After that I did a quick check:
+
+bc. >>> from PIL import Image
+>>> quit()
+
+No errors so I was ready to go!
+
+h3. Learning python as you code
+
+I had used python a bit earlier but honestly *too little*. So this was a nice chance to learn some more. Luckily they had some sample code to get started with. 
+
+After fixing some syntax issues from my copy-paste, I had a the example program running and producing the image seen below!
+
+<img title="I already feel like a winner!" src="https://lh4.googleusercontent.com/-PLASdwRXd3U/TsP5cYP7BsI/AAAAAAAAAuw/mlRPhXAjb8U/s144/unshredded.jpg">
+
+h3. First solution
+
+It took me 2-3 hours to get the *image unshredded*.
+
+<img title="Not bad for a sort of beginner" src="https://lh5.googleusercontent.com/-1xcbi3ABYVY/TsQsSi16W6I/AAAAAAAAAvE/yv0qXsjd1uk/s144/unshredded.jpg">
+
+I used the nice "python tutorial":http://docs.python.org/tutorial/index.html a lot and getting used to the syntax took a while <em>(no semicolons! no curly braces!)</em>. But I found python to be really easy and powerful language! 
+
+Here's the solution, not very elegant but pretty readable IMO ;).
+
+<script src="https://gist.github.com/1371476.js?file=unshredder.py"></script>
+
+h3. Better solution
+
+I'll update this once I tweak my solution.
+
+h3. Links
+
+"sources":https://github.com/huljas/unshredder-python
+ 
+
+
