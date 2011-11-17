@@ -8,7 +8,7 @@ h2. {{ page.title }}
 
 p(meta). 16 Nov 2011 - Espoo
 
-I got challenged to the "unshredder":http://instagram-engineering.tumblr.com/post/12651721845/instagram-engineering-challenge-the-unshredder challenge. I decided to try something different this time and try to solve the problem with *python*.
+My good friend "+Zsolt Szasz":https://plus.google.com/113699582561117500948/posts challenged me to the "unshredder challenge":http://instagram-engineering.tumblr.com/post/12651721845/instagram-engineering-challenge-the-unshredder. I decided to try something different this time and solve the problem using *python*.
 
 h3. Setting up
 
@@ -41,7 +41,7 @@ Here's the solution, not very elegant but pretty readable IMO ;).
 
 h3. Better solution
 
-I'll update this once I tweak my solution.
+I'll update this one once I tweak my solution. 
 
 h3. Links
 
