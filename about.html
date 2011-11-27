@@ -6,33 +6,54 @@ title: About Me
 <div id="home">
   <img src="http://fi.gravatar.com/userimage/20598269/4a2a3c2b64c81576d4315182a3897268.jpg?size=200" style="float:right">
   <h1>Hi, I'm Heikki Uljas,</h1>
-  <h2>a software engineer living in Finland.<h2/>
-  <h1>I like coding,</h1>
-  <h2>I even code a bit on my freetime.</h2>
-  <h1>I enjoy hard programming problems.</h1>
-  <h2>But since you don't bump into problems you can't google so often anymore, you mostly work with the routine stuff.</h2>
-  <br>
-  <h2>But I really see it as</h2>
+  <p>a 30+ software engineer living in Finland.<p/>
+  <h2>I like coding,</h2>
+  <p>I even code a bit on my freetime.</p>
+  <h2>I enjoy hard programming problems.</h2>
+  <p>But since you don't bump into problems you can't google anymore, you mostly work with the routine stuff.</p>
+
+  <p>But I really see it as</p>
   <h1>Working with the cool stuff between the routine.</h1>
-  <br>
-  <h2>And ofc things that are important to me</h2>
+
+<div class="language-song">
+<script src="https://gist.github.com/1397969.js?file=Song.java"></script>
+<script src="https://gist.github.com/1397969.js?file=song.py"></script>
+<script src="https://gist.github.com/1397969.js?file=song.cpp"></script>
+</div>
+
   
- <div class="interests">
- </div>
-		<div style="clear:both"></div>
+
+<div class="footer">
+  <span style="float:left"><em>Find me at</em></span>
+  <div class="contact">
+    <a href="http://github.com/huljas/">
+      <img src="/images/github_small.jpg" alt="My github" height="32">
+    </a>
+    <a rel="author" href="http://gplus.to/huljas">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32" alt="+Heikki Uljas">
+    </a>
+    <a href="http://fi.linkedin.com/in/heikkiuljas" >
+      <img src="http://www.linkedin.com/img/webpromo/btn_myprofile_160x33.png" width="160" height="33" border="0" alt="View Heikki Uljas's profile on LinkedIn">
+    </a>
+  </div>
+  <div class="rss">
+    <a href="http://feeds.feedburner.com/heikki-uljas">
+      <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
+    </a>
+  </div>
+</div>
+
 <script>
 $(function() {
-	$.get("/photos.xml", function(result) {
-		$(result).find("item").each(function() {
-			var elem = $("<div class=\"wrapper\"></div>");
-			var a = $("<a>").attr("href", $(this).find("link").first().text());
-			a.append("<img src=\"" + $(this).find("enclosure").attr("url") + "\">");
-			a.append($("<span>").append($(this).find("title").first().text()));
-			elem.append(a);
-			$(".interests").append(elem);
-		});
-	}, "xml");
+  $.get("/photos.xml", function(result) {
+    $(result).find("item").each(function() {
+      var elem = $("<div class=\"wrapper\"></div>");
+      var a = $("<a>").attr("href", $(this).find("link").first().text());
+      a.append("<img src=\"" + $(this).find("enclosure").attr("url") + "\">");
+      a.append($("<span>").append($(this).find("title").first().text()));
+      elem.append(a);
+      //$(".interests").append(elem);
+    });
+  }, "xml");
 });
 </script> 
- 
-</div> 
