@@ -27,7 +27,11 @@ $(function() {
 
 <div id="home">
   <div class="categories">
-    <h1>Hi, this is my blog!</h1>
+  <header>
+    <span>Hi, I'm Heikki Uljas and</span>
+    <h1>this is my blog.</h1>
+    <span>I have lot of ideas to write about but I'm splitting my time between coding (for living), family, house and various other stuff including this blog.</span>
+  </header>  
     <a href="#" class="show-all selected"><span>all</span></a>
     {% for category in site.categories %}
       <a href="#"><span>{{ category | first }}</span></a>

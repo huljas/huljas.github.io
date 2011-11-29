@@ -16,6 +16,12 @@ html, body {
   height: 100%;
 }
 
+header {
+  background-color: #EEEEEE;
+  margin-bottom: 3em;
+  padding: 11px;
+}
+
 body {
   /*background: url("/images/bg-page.png") repeat-x scroll center top #E0E0E9;*/
   background: url("/images/bg-page-2.png") repeat-x scroll center top #B0C2D8;
