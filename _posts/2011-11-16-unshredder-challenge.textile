@@ -41,7 +41,7 @@ Here's the solution, not very elegant but pretty readable IMO ;).
 
 h3. Better solution
 
-I'll update this one once I tweak my solution. 
+I have updated my solution with a solution to the "bonus challenge":/code/2011/12/06/unshredder-challenge-part-2.html.
 
 h3. Links
 

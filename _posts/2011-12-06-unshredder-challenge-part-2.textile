@@ -1,0 +1,34 @@
+---
+layout: post
+title: Unshredder challenge part 2
+category: code
+---
+
+h2. {{ page.title }}
+
+p(meta). 06 Dec 2011 - Espoo
+
+After my "first solution":/code/2011/11/16/unshredder-challenge.html to "unshredder challenge":http://instagram-engineering.tumblr.com/post/12651721845/instagram-engineering-challenge-the-unshredder I started working on the bonus part of the problem: auto-detecting how wide the uniform slices are. 
+
+My plan was pretty simple:
+ 
+bc. for each vertical column of pixels X[i]
+    calculate distance D[i] = distance(X[i], X[i+1]
+Dmax = sort D desc
+for each slice width W
+    M = number of borders with slice width *W*
+    P = number of borders in the first *M* elements of Dmax with slice width *W*
+    return w with max(P / M)
+
+The plan worked otherwise great except that slice width 256 (2 slices) maximized my <code>P / M</code>. I fixed that by returning the first <code>W</code> that exceeds a given threshold.
+
+The result is the following python code:
+
+<script src="https://gist.github.com/1371476.js?file=find_slice_width.py"></script>
+    
+h3. Links
+
+"sources":https://github.com/huljas/unshredder-python
+ 
+
+

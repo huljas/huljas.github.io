@@ -17,9 +17,7 @@ html, body {
 }
 
 header {
-  background-color: #EEEEEE;
-  margin-bottom: 3em;
-  padding: 11px;
+  margin-bottom: 1em;  
 }
 
 body {
@@ -180,6 +178,10 @@ ul.posts {
   font-family: Helvetica;
 }
 
+.title .rss {
+  float: right;
+}
+
 .site .title a {
   color: #a00;
   text-decoration: none;
@@ -221,21 +223,11 @@ ul.posts {
   margin-top: 1em;
 }
 
-.site .footer .contact a {
+.contact a {
   color: #8085C1;
   text-decoration: none;
-  padding: 5px 11px;
 }
 
-.site .footer .rss {
-  margin-top: 1.1em;
-  margin-right: 0.1em;
-  float: right;
-}
-
-.site .footer .rss img {
-  border: 0;
-}
 
 /*****************************************************************************/
 /*
@@ -303,8 +295,6 @@ ul.projects {
 }
 
 .projects li {
-    border-bottom: 1px solid #EEEEEE;
-    border-top: 1px solid #EEEEEE;
     margin: 0;
     padding: 0.2em 0 1em;
 }
