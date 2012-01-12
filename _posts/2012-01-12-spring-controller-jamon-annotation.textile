@@ -1,0 +1,20 @@
+---
+layout: post
+title: Spring controller monitoring aspect
+category: code
+---
+h2. {{ page.title }}
+
+p(meta). 12 Jan 2012 - Espoo
+
+I wanted to monitor our Spring MVC application with <a href="http://jamonapi.sourceforge.net/">Jamon</a>. We rely on the use of the <code>@Controller</code> annotation so aspects seemed like the right way to go. 
+
+After some digging on the <a href="http://static.springsource.org/spring/docs/3.0.6.RELEASE/spring-framework-reference/html/aop.html#aop-pointcuts-designators">documentation</a> I came up with the following aspect:
+
+<script src="https://gist.github.com/1600772.js?file=MonitoredSpringBeanAspect.java"></script>
+
+Now I just needed to enable autoproxying with 
+
+bc. <aop:aspectj-autoproxy />
+
+line in my application context file and all my controllers started showing in Jamon!
