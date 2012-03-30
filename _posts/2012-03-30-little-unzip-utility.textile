@@ -1,0 +1,16 @@
+---
+layout: post
+title: Little unzip utility - In Java
+category: code
+---
+h2. {{ page.title }}
+
+p(meta). 30 Mar 2012 - Espoo
+
+It's always fun when you bump into a problem you haven't encountered before. 
+
+This time I had a database dump file that was so large that I had to zip it. And since I wanted to unzip it in Java I had to find out how it's done.
+
+Well it turned out to be pretty straight forward, here's the gist:
+
+<script src="https://gist.github.com/2254197.js"> </script>
