@@ -1,12 +1,9 @@
 ---
 layout: post
 title: Drive by performance testing
-category: swengi
+category: performance
+tags: [jamon]
 ---
-
-h2. {{ page.title }}
-
-p(meta). 08 Nov 2011 - Espoo
 
 Typically the performance tests are run by a specialist who runs his tests for a day, sends his report and then drives away. And you, the poor developer are left with a plot chart illustrating some weird performance issue you haven't the slightest idea what is causing it.
 

@@ -1,12 +1,9 @@
 ---
 layout: post
 title: Unshredder challenge part 2
-category: code
+category: learning
+tags: [python]
 ---
-
-h2. {{ page.title }}
-
-p(meta). 06 Dec 2011 - Espoo
 
 After my "first solution":/code/2011/11/16/unshredder-challenge.html to "unshredder challenge":http://instagram-engineering.tumblr.com/post/12651721845/instagram-engineering-challenge-the-unshredder I started working on the bonus part of the problem: auto-detecting how wide the uniform slices are. 
 

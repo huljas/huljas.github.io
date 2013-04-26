@@ -2,10 +2,8 @@
 layout: post
 title: Little unzip utility - In Java
 category: code
+tags: [java, zip]
 ---
-h2. {{ page.title }}
-
-p(meta). 30 Mar 2012 - Espoo
 
 It's always fun when you bump into a problem you haven't encountered before. 
 

@@ -1,7 +1,9 @@
 ---
 layout: post
-title: Fun with canvas part 1
-category: code
+title: Fun with javascript and canvas
+category: web
+tags : [javascript]
+ 
 ---
 
 <script type="text/javascript" src="/js/animation-part-1.js"></script>
@@ -10,10 +12,6 @@ $(function() {
   Animation.init("stars1");  
 });
 </script>
-
-h2. {{ page.title }}
-
-p(meta). 15 Oct 2011 - Espoo
 
 I had this *crazy* idea of putting some canvas animation into the layout of this new site. The idea didn't fly, but I managed to create this *quite nice* animation of stars:
 

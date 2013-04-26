@@ -1,12 +1,9 @@
 ---
 layout: post
 title: Unshredder challenge
-category: code
+category: learning
+tags: [python]
 ---
-
-h2. {{ page.title }}
-
-p(meta). 16 Nov 2011 - Espoo
 
 My good friend "+Zsolt Szasz":https://plus.google.com/113699582561117500948/posts challenged me to the "unshredder challenge":http://instagram-engineering.tumblr.com/post/12651721845/instagram-engineering-challenge-the-unshredder. I decided to try something different this time and solve the problem using *python*.
 

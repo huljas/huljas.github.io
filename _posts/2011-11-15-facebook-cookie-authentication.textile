@@ -1,12 +1,9 @@
 ---
 layout: post
 title: Facebook cookie server side authentication 
-category: code
+category: web
+tags: [facebook, authentication, java]
 ---
-
-h2. {{ page.title }}
-
-p(meta). 15 Nov 2011 - Espoo
 
 In this example I show how to validate a user's facebook session in the server side using the fbsr cookie created by the FB javascript API.
 

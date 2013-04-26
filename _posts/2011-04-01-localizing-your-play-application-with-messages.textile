@@ -1,13 +1,10 @@
 ---
 layout: post
+category: playframework
 title: Localizing your play application with @messages
-category: code
+tags : [playframework1.0, module, localization]
+
 ---
-
-
-h2. {{ page.title }}
-
-p(meta). 20 Mar 2011 - Espoo
 
 I wrote this module to help me with the localization of our application. I used to have similar tool in our old struts based system, so I first copied it to play and later rewrote it all together. I even forced myself to learn regexp, which I have been trying to avoid so far ;). 
 

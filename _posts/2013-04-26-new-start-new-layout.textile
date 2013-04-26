@@ -1,0 +1,12 @@
+---
+layout: post
+title: New start, new layout
+category: blog
+tags: [jekyll]
+---
+
+So after a year I'm starting to write my blog again. A lot has happened since my last post: new exiting job at Rovio, learned new stuff and gained some weight ;).
+
+And what better way to start than with a fresh layout! 
+
+Well it's just the jekyll bootstrap default one, but I can't be arsed to do any design now so it'll have to do! 

@@ -1,11 +1,9 @@
 ---
 layout: post
 title: Spring controller monitoring aspect
-category: code
+category: performance
+tags: [jamon, java]
 ---
-h2. {{ page.title }}
-
-p(meta). 12 Jan 2012 - Espoo
 
 I wanted to monitor our Spring MVC application with <a href="http://jamonapi.sourceforge.net/">Jamon</a>. We rely on the use of the <code>@Controller</code> annotation so aspects seemed like the right way to go. 
 

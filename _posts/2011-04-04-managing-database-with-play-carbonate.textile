@@ -1,12 +1,9 @@
 ---
 layout: post
+category: playframework
 title: Managing database with play carbonate
-category: code
+tags : [playframework1.0, module, migrations]
 ---
-
-h2. {{ page.title }}
-
-p(meta). 4 Apr 2011 - Espoo
 
 Managing the database is important aspect of modern application development, typically done with database migrations. I used migrations before I started working with play so naturally the first module I wrote for it was a database migrations module with my favorite migrations library, "Carbon Five Migrations":http://code.google.com/p/c5-db-migration/. 
 
