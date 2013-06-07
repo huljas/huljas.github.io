@@ -1,8 +1,10 @@
 ---
 layout: page
-title: About me
+title : About me
+header : About me
+group: navigation
 ---
-I started coding in my twenties and by luck ended up working with games. I'm currently working on server side stuff for games at Rovio.
+I started coding in my twenties and by luck ended up working with games. I'm currently working with server side stuff at [Rovio](http://www.rovio.com).
 
 I like coding, I even do it a bit on my freetime. And occasionally I blog about it, mostly for myself.
 
