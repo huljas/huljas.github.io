@@ -7,9 +7,7 @@ tags: [java,design]
 
 I really liked the way the database access was simplified to static methods in the data object in [Play framework version 1.x](http://www.playframework.com/documentation/1.2.5/jpa):
 
-```
-MyModel found = MyModel.findById(id);
-```
+    MyModel found = MyModel.findById(id);
 
 I wanted to achieve something similar in my current project. My starting point was a common helper class which contained the database specific implementation:
 
