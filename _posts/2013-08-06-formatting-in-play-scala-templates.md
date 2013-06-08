@@ -12,26 +12,52 @@ Formatting numbers
 
 Probably the most convenient way to format numbers is to use the scala Strings `format`
 
-    <pre>
-    left padding zeroes  : @("%03d".format(7)) == 007
-    leading spaces       : '@("% 4d".format(11)) == '  11'
-    with 2 decimals      : @("%.2f".format(1123.345566)) == 1123,35
-    with locale          : @("%.2f".formatLocal(Locale.US, 1123.345566)) == 1123.35
-    </pre>
+    left padding zeroes  : @("%03d".format(7))
+    leading spaces       : '@("% 4d".format(11))
+    with 2 decimals      : @("%.2f".format(1123.345566))
+    with locale          : @("%.2f".formatLocal(Locale.US, 1123.345566))
 
-which also works with dates
+generates
 
-    <pre>
-    just time            : @("%tT".format(1312180002230L)) == 09:26:42
-    date                 : @("%tF".format(1312180002230L)) == 2011-08-01
-    date and time        : @("%1$tH:%1$tM:%1$tS.%1$tL %1$tY.%1$tm.%1$td".format(1312180002231L)) == 09:26:42.231 2011.08.01
-    </pre>
+<pre>
+left padding zeroes  : 007
+leading spaces       : '  11
+with 2 decimals      : 1123,35
+with locale          : 1123.35
+</pre>
 
-And for string formatting we can use the functional power of scala
+Formatting dates
+----------------
 
-    <pre>
+`format` also works with dates
+
+    just time            : @("%tT".format(1312180002230L))
+    date                 : @("%tF".format(1312180002230L))
+    date and time        : @("%1$tH:%1$tM:%1$tS.%1$tL %1$tY.%1$tm.%1$td".format(1312180002231L))
+
+shows dates as
+
+<pre>
+just time            : 09:26:42
+date                 : 2011-08-01
+date and time        : 09:26:42.231 2011.08.01
+</pre>
+
+Formatting strings
+------------------
+
+For string formatting we can use the functional power of scala
+
     lower case           : @("AbC".toLowerCase) == abc
     upper case           : @("aBc".toUpperCase) == ABC
     capitalize           : @("abc".capitalize) == Abc
     capitalize each word : @("The quick brown FOX jumps over the lazy dog".split(" ").map(_.toLowerCase.capitalize).mkString(" ")) == The Quick Brown Fox Jumps Over The Lazy Dog
-    </pre>
+
+converts them to
+
+<pre>
+lower case           : abc
+upper case           : ABC
+capitalize           : Abc
+capitalize each word : The Quick Brown Fox Jumps Over The Lazy Dog
+</pre>
