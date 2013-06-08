@@ -55,7 +55,7 @@ Since static methods are out of the question what could we do with a base class 
 
     MyModel found = (MyModel) new MyModel().findById(id);
 
-Now can we get rid of the cast with generics?
+We can get rid of the cast with generics
 
     class BaseModel<T extends BaseModel> {
         public T findById(String id) {
@@ -80,7 +80,9 @@ Okay so since direct inheritance is out of the question maybe we could use encap
 
         private final Class<T> type;
 
-
+        public BaseDAO(Class<T> type) {
+            this.type=type;
+        }
 
         public Class<T> getType() {
             return type;
