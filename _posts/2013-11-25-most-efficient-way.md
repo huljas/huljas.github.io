@@ -9,6 +9,6 @@ tags: [agile]
 
 You could ask the "Why?" question and figure out that something is not needed at all. 
 
-Or you could find out that someone has already solved your problem far better than you ever could.
+Or you could find out that there already exists a solution for you problem.
 
 
